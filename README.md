@@ -37,7 +37,7 @@ xmake run RoboOpVisualizer
 xmake run RoboOpTest
 ```
 
-## 🛠 Features
+## Features
 
 - **Quintic Hermite Splines**: Smooth, $C^2$ continuous path generation with optimized arc-length parameterization.
 - **Motion Profiling**: High-accuracy trapezoidal and triangular profiles for velocity control.
@@ -45,5 +45,5 @@ xmake run RoboOpTest
 - **Real-time Visualization**: Interactive graph with panning, zooming, and image overlays.
 - **Seamless Integration**: Unified build system with manage-free dependencies.
 
-## ⚖️ License
+## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

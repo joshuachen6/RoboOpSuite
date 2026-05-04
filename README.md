@@ -4,20 +4,22 @@ A comprehensive robotics toolkit for path planning, control, and visualization. 
 
 ![RoboOpVisualizer](https://github.com/user-attachments/assets/05924ffa-f4d6-416a-916b-234c3aeed642)
 
-## 📦 Project Structure
+## Project Structure
 
 - **[RoboOp](./RoboOp)**: The core C++20 library. Includes quintic splines, trapezoidal motion profiles, PID controllers, and tank drive implementations.
 - **[RoboOpVisualizer](./RoboOpVisualizer)**: An interactive GUI tool for designing and inspecting trajectories in real-time.
 
-## 🚀 Quick Start
+## Quick Start
 
 This project uses [xmake](https://xmake.io) for its build system. xmake will automatically handle all dependencies (Eigen, ImGui, ImPlot, GLFW, etc.).
 
 ### Prerequisites
+
 - [xmake](https://xmake.io/guide/installation)
 - A C++20 compatible compiler (GCC 10+, Clang 10+, or MSVC 19.29+)
 
 ### Build Everything
+
 ```bash
 # Clone the repository
 git clone https://github.com/joshuachen6/RoboOpSuite.git
@@ -28,11 +30,13 @@ xmake
 ```
 
 ### Run the Visualizer
+
 ```bash
 xmake run RoboOpVisualizer
 ```
 
 ### Run the Tests
+
 ```bash
 xmake run RoboOpTest
 ```
@@ -46,4 +50,5 @@ xmake run RoboOpTest
 - **Seamless Integration**: Unified build system with manage-free dependencies.
 
 ## ⚖️ License
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -1,18 +1,24 @@
 #pragma once
 
 #include <utility>
-static const double H_STEP = 0.01;
+
+static constexpr double H_STEP = 0.01;
 
 template<typename T>
-double integrate(double start, double end, T function) {
-    int sign = 1;
-    if (start > end) {
-        std::swap(start, end);
-        sign = -1;
+double integrate(double start, double end, T function, int steps = 100) {
+    if (steps % 2 != 0) steps++; // Simpson's rule requires even steps
+    
+    double h = (end - start) / steps;
+    double sum = function(start) + function(end);
+    
+    for (int i = 1; i < steps; i++) {
+        double x = start + i * h;
+        if (i % 2 == 0) {
+            sum += 2 * function(x);
+        } else {
+            sum += 4 * function(x);
+        }
     }
-    double sum = 0;
-    for (double x = start; x < end; x+=H_STEP) {
-        sum += function(x);
-    }
-    return sum*H_STEP*sign;
+    
+    return sum * h / 3.0;
 }

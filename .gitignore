@@ -1,0 +1,7 @@
+.xmake/
+build/
+*.o
+*.a
+*.so
+*.p7b
+.gh-pages/

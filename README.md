@@ -4,12 +4,12 @@ A comprehensive robotics toolkit for path planning, control, and visualization. 
 
 <img width="1627" height="1118" alt="Screenshot_20260504_081942" src="https://github.com/user-attachments/assets/356ac5d6-4522-49c5-af7c-a54bdcc4121b" />
 
-## 📦 Project Structure
+## Project Structure
 
 - **[RoboOp](./RoboOp)**: The core C++20 library. Includes quintic splines, trapezoidal motion profiles, PID controllers, and tank drive implementations.
 - **[RoboOpVisualizer](./RoboOpVisualizer)**: An interactive GUI tool for designing and inspecting trajectories in real-time.
 
-## 🚀 Quick Start
+## Quick Start
 
 This project uses [xmake](https://xmake.io) for its build system. xmake will automatically handle all dependencies (Eigen, ImGui, ImPlot, GLFW, etc.).
 

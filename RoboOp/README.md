@@ -1,32 +1,59 @@
 # RoboOp Library
-Library for autonomous operating robots.
-## Install Instructions
-### CMake
-Builds the shared library and the test binary.
+
+The core high-performance library for autonomous robot operation, focusing on path generation and control systems.
+
+## 🚀 Installation
+
+This library is part of the **RoboOpSuite** and uses [xmake](https://xmake.io).
+
+### As part of the Suite
+Build from the root directory:
+```bash
+xmake
 ```
-cmake -B build
-cmake --build build
+
+### Build Library & Tests only
+```bash
+xmake build RoboOp RoboOpTest
+xmake run RoboOpTest
 ```
-### Python
-Copies over the source and header files into their respective folders in your current directory.
-```
-python setup.py
-```
-## Features
-### Spline path generation
-Generate quintic spline paths by inputting control points.
+
+## 🛠 Features
+
+### 1. Quintic Hermite Splines
+Generate smooth, $C^2$ continuous paths with optimized arc-length parameterization.
+- **Optimized Evaluation**: Uses Horner's method for efficient polynomial calculation.
+- **Accurate Arc Length**: Implements Simpson's Rule for precise numerical integration.
+- **Binary Search Lookup**: Fast $O(\log n)$ pose-by-distance lookups.
+
 ```cpp
-std::shared_ptr<Trajectory> path = TrajectoryBuilderFactory::create({{0, 0}, 0})
-        .to({{10, 10}, 0.25})
-        .to({{20, 10}, 0})
-        .build();
+auto trajectory = TrajectoryBuilderFactory::create({Vector2d(0, 0), 0})
+    .to({Vector2d(10, 10), M_PI/4})
+    .build();
+
+Pose2d pose = trajectory->getPose(5.0); // Get pose at 5 units along the path
 ```
-![Splines](https://github.com/user-attachments/assets/d7be3dc5-1212-4b20-9aaf-f71e97a21b9a)
-### Ramsete
-The Ramsete controller is currently under testing.
-### Tank Drive
-Tank drive implementation for path following. 
-### Future Plans
-- Localization implementations
-- Motion profiling
-- GUI visualizer (Separate Project)
+
+### 2. Motion Profiling
+Highly accurate trapezoidal and triangular profiles.
+- Handles distance-constrained peak velocities.
+- Continuous position and velocity calculation.
+
+### 3. PID Control
+Industrial-grade PID implementation.
+- **Anti-Windup**: Clamped accumulator to prevent integral overshoot.
+- **Output Clamping**: Built-in safety limits.
+- **Time-Scaled**: Derivative and integral terms are scaled by real delta-time.
+
+### 4. Drive Controllers
+- **Tank Drive**: Standard differential drive implementation.
+- **Ramsete**: Advanced nonlinear path-following controller (Experimental).
+
+## 📚 Dependencies
+- **Eigen**: High-performance linear algebra library (managed by xmake).
+- **Catch2**: Unit testing framework (managed by xmake).
+
+## 🗺 Roadmap
+- [ ] Improved Odometry & Localization.
+- [ ] Pure Pursuit controller.
+- [ ] Support for Mecanum/Swerve drives.

@@ -13,7 +13,7 @@ void Editor::render() {
         Pose2d& point = manager->poses[i];
         ImGui::PushID(i);
 
-        ImGui::SeparatorText(std::format("Point {}", i).c_str());
+        ImGui::SeparatorText(std::format("Point {}", i + 1).c_str());
 
         ImGui::SetNextItemWidth(80);
         ImGui::InputDouble("X", &point.position.x(), 0, 0, "%g");

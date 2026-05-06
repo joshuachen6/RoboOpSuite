@@ -53,7 +53,7 @@ void Graph::render() {
                     y_values[ii] = position.y();
                 }
 
-                ImPlot::PlotLine(std::format("Spline {}", i).c_str(), x_values, y_values, count);
+                ImPlot::PlotLine(std::format("Spline {} ({}-{})", i + 1, i + 1, i + 2).c_str(), x_values, y_values, count);
             }
 
             Pose2d followingPoint = trajectory->poseByArcLength(currentLength);

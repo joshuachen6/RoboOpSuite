@@ -42,6 +42,13 @@ Window::Window() {
     ImGui_ImplOpenGL3_Init();
 
     ImPlot::CreateContext();
+
+    ImGuiStyle& style = ImGui::GetStyle();
+    style.WindowRounding = 8.0f;
+    style.FrameRounding = 6.0f;
+    style.GrabRounding = 6.0f;
+    style.PopupRounding = 6.0f;
+    style.ChildRounding = 6.0f;
 }
 
 Window::~Window() {

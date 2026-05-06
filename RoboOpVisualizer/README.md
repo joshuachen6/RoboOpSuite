@@ -2,7 +2,7 @@
 
 An interactive GUI tool for designing, inspecting, and generating code for robot trajectories.
 
-<img width="1627" height="1118" alt="Screenshot_20260504_081942" src="https://github.com/user-attachments/assets/843c44ae-735d-4329-a24d-e82e88bad5cf" />
+<img width="1614" height="1049" alt="Screenshot_20260505_202926" src="https://github.com/user-attachments/assets/39985740-e79d-405e-836c-2c6f6e186724" />
 
 ## Getting Started
 

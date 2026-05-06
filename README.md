@@ -2,7 +2,7 @@
 
 A comprehensive robotics toolkit for path planning, control, and visualization. This suite provides a high-performance C++ library for autonomous robot operations and a powerful GUI for path visualization and editing.
 
-<img width="1627" height="1118" alt="Screenshot_20260504_081942" src="https://github.com/user-attachments/assets/356ac5d6-4522-49c5-af7c-a54bdcc4121b" />
+<img width="1614" height="1049" alt="Screenshot_20260505_202926" src="https://github.com/user-attachments/assets/e376ef6a-b970-42a8-8652-12d12a9650aa" />
 
 ## Project Structure
 
